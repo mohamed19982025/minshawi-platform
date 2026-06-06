@@ -1,0 +1,92 @@
+[
+  {
+    "id": "cmq172ngm0001vge8rp4yxwtl",
+    "number": 2,
+    "name": "البقرة",
+    "slug": "al-baqarah",
+    "file": "https://archive.org/download/minshawi-second-mushaf/002-al-baqarah.mp4",
+    "duration": "02:49:53",
+    "createdAt": "2026-06-05T17:24:58.054Z",
+    "updatedAt": "2026-06-05T17:46:37.947Z"
+  },
+  {
+    "id": "cmq172nhw0002vge829anaslc",
+    "number": 3,
+    "name": "آل عمران",
+    "slug": "aal-imran",
+    "file": "https://archive.org/download/minshawi-second-mushaf/003-aal-imran.mp4",
+    "duration": "01:29:48",
+    "createdAt": "2026-06-05T17:24:58.101Z",
+    "updatedAt": "2026-06-05T17:46:37.987Z"
+  },
+  {
+    "id": "cmq172niz0003vge8tba8dj7k",
+    "number": 4,
+    "name": "النساء",
+    "slug": "an-nisa",
+    "file": "https://archive.org/download/minshawi-second-mushaf/004-an-nisa.mp4",
+    "duration": "01:25:20",
+    "createdAt": "2026-06-05T17:24:58.139Z",
+    "updatedAt": "2026-06-05T17:46:38.026Z"
+  },
+  {
+    "id": "cmq172nk60004vge8m53q48ig",
+    "number": 5,
+    "name": "المائدة",
+    "slug": "al-maidah",
+    "file": "https://archive.org/download/minshawi-second-mushaf/005-al-maidah.mp4",
+    "duration": "01:09:50",
+    "createdAt": "2026-06-05T17:24:58.183Z",
+    "updatedAt": "2026-06-05T17:46:38.066Z"
+  },
+  {
+    "id": "cmq172nl90005vge8a5t7pf4n",
+    "number": 6,
+    "name": "الأنعام",
+    "slug": "al-anam",
+    "file": "https://archive.org/download/minshawi-second-mushaf/006-al-anam.mp4",
+    "duration": "01:11:21",
+    "createdAt": "2026-06-05T17:24:58.222Z",
+    "updatedAt": "2026-06-05T17:46:38.107Z"
+  },
+  {
+    "id": "cmq172nme0006vge8fphg773d",
+    "number": 7,
+    "name": "الأعراف",
+    "slug": "al-araf",
+    "file": "https://archive.org/download/minshawi-second-mushaf/007-al-araf.mp4",
+    "duration": "01:19:39",
+    "createdAt": "2026-06-05T17:24:58.263Z",
+    "updatedAt": "2026-06-05T17:46:38.146Z"
+  },
+  {
+    "id": "cmq172nnb0007vge8ge34le5n",
+    "number": 8,
+    "name": "الأنفال",
+    "slug": "al-anfal",
+    "file": "https://archive.org/download/minshawi-second-mushaf/008-al-anfal.mp4",
+    "duration": "00:31:22",
+    "createdAt": "2026-06-05T17:24:58.295Z",
+    "updatedAt": "2026-06-05T17:46:38.185Z"
+  },
+  {
+    "id": "cmq172noz0008vge8pih4tyrz",
+    "number": 9,
+    "name": "التوبة",
+    "slug": "at-tawbah",
+    "file": "https://archive.org/download/minshawi-second-mushaf/009-at-tawbah.mp4",
+    "duration": "00:57:20",
+    "createdAt": "2026-06-05T17:24:58.355Z",
+    "updatedAt": "2026-06-05T17:46:38.224Z"
+  },
+  {
+    "id": "cmq172nqf0009vge82slpvags",
+    "number": 10,
+    "name": "يونس",
+    "slug": "yunus",
+    "file": "https://archive.org/download/minshawi-second-mushaf/010-yunus.mp4",
+    "duration": "00:43:15",
+    "createdAt": "2026-06-05T17:24:58.407Z",
+    "updatedAt": "2026-06-05T17:46:38.264Z"
+  }
+]
