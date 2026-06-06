@@ -21,6 +21,9 @@ export default function AboutPage() {
           </p>
           <p className="font-medium text-center mt-8 p-4 bg-gray-50 dark:bg-gray-900 rounded-xl">
             نسأل الله أن يجعل هذا العمل صدقة جارية في ميزان حسنات الشيخ، وكل من ساهم في نشر هذه التلاوات.
+            تم تنفيذ الموقع بواسطة المهندس سعد هرماش 
+            صدقة جارية عن موتانا وجميع موتى المسلمين.
+            
           </p>
         </div>
       </div>
