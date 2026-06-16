@@ -5,15 +5,11 @@ import surahs from "@/data/surahs.json";
 export default function Home() {
 const surahsCount = surahs.length;
 
-const sortedSurahs = [...surahs].sort(
-(a, b) =>
-new Date(b.createdAt).getTime() -
-new Date(a.createdAt).getTime()
-);
+const latestSurah = surahs[surahs.length - 1];
 
-const latestSurah = sortedSurahs[0];
-
-const recentSurahs = sortedSurahs.slice(0, 3);
+const recentSurahs = [...surahs]
+.reverse()
+.slice(0, 3);
 
 return ( <div className="container mx-auto px-4 py-12">
 
@@ -81,6 +77,7 @@ return ( <div className="container mx-auto px-4 py-12">
             استمع الآن
           </Link>
         </div>
+
       </div>
     </section>
   )}
