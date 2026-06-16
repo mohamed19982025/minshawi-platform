@@ -118,5 +118,25 @@
 "duration": "00:19:08",
 "createdAt": "2026-06-06T00:00:00.000Z",
 "updatedAt": "2026-06-06T00:00:00.000Z"
+},
+{
+"id": "surah-014-ibrahim",
+"number": 14,
+"name": "إبراهيم",
+"slug": "ibrahim",
+"file": "https://archive.org/download/minshawi-second-mushaf/014-ibrahim.MP3",
+"duration": "00:18:24",
+"createdAt": "2026-06-06T00:00:00.000Z",
+"updatedAt": "2026-06-06T00:00:00.000Z"
+},
+{
+"id": "surah-015-al-hijr",
+"number": 15,
+"name": "الحجر",
+"slug": "al-hijr",
+"file": "https://archive.org/download/minshawi-second-mushaf/015-al-hijr.MP3",
+"duration": "00:14:10",
+"createdAt": "2026-06-06T00:00:00.000Z",
+"updatedAt": "2026-06-06T00:00:00.000Z"
 }
 ]
