@@ -31,43 +31,52 @@ export default async function SurahDetailPage({ params }: { params: Promise<{ sl
   }
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-6 flex items-center text-sm text-gray-500">
-          <Link href="/" className="hover:text-primary">الرئيسية</Link>
-          <span className="mx-2">/</span>
-          <Link href="/surahs" className="hover:text-primary">السور</Link>
-          <span className="mx-2">/</span>
-          <span className="text-foreground">سورة {surah.name}</span>
+    <div className="container mx-auto px-4 py-12 animate-fade-in-up">
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-8 flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400">
+          <Link href="/" className="hover:text-primary transition-colors">الرئيسية</Link>
+          <span className="text-gray-300 dark:text-gray-600">/</span>
+          <Link href="/surahs" className="hover:text-primary transition-colors">المكتبة الصوتية</Link>
+          <span className="text-gray-300 dark:text-gray-600">/</span>
+          <span className="text-primary font-bold">سورة {surah.name}</span>
         </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 md:p-12 shadow-sm border border-gray-100 dark:border-gray-700 text-center mb-8 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-2 bg-linear-to-r from-primary to-secondary"></div>
+        <div className="glass-card rounded-[2.5rem] p-8 md:p-14 shadow-2xl border border-primary/10 text-center mb-8 relative overflow-hidden group">
+          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-pulse-slow"></div>
           
-          <div className="w-24 h-24 mx-auto bg-primary/10 rounded-full flex items-center justify-center text-primary text-3xl font-bold mb-6">
-            {surah.number}
-          </div>
-          
-          <h1 className="text-4xl md:text-5xl font-bold font-(family-name:--font-amiri) text-primary mb-4">
-            سورة {surah.name}
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8">
-            الشيخ محمد صديق المنشاوي
-          </p>
-          
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
-            <span className="bg-gray-100 dark:bg-gray-700 px-4 py-2 rounded-full text-sm font-medium">
-              مدة التلاوة: {surah.duration}
-            </span>
-          </div>
+          {/* Decorative glowing background elements */}
+          <div className="absolute -top-32 -right-32 w-64 h-64 bg-primary/10 rounded-full blur-[80px] pointer-events-none"></div>
+          <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-secondary/10 rounded-full blur-[80px] pointer-events-none"></div>
 
-          <AudioPlayer surahSlug={surah.slug} audioUrl={surah.file.startsWith('http') ? surah.file : `/audio/${surah.file}`} />
-          
-          <div className="flex items-center justify-center gap-6 mt-8 pt-8 border-t border-gray-100 dark:border-gray-700 flex-wrap">
-            <a href={surah.file.startsWith('http') ? surah.file : `/audio/${surah.file}`} target="_blank" rel="noopener noreferrer" download className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary transition font-medium bg-gray-50 dark:bg-gray-900 px-4 py-2 rounded-lg">
-              <Download size={20} /> تحميل الملف
-            </a>
-            <ShareButton title={`سورة ${surah.name}`} text={`استمع لسورة ${surah.name} بصوت الشيخ محمد صديق المنشاوي`} />
+          <div className="relative z-10">
+            <div className="w-28 h-28 mx-auto bg-primary/5 border-2 border-primary/20 rounded-full flex items-center justify-center text-primary text-4xl font-bold mb-8 shadow-inner relative">
+              <span className="absolute inset-0 border-2 border-dashed border-primary/30 rounded-full animate-[spin_10s_linear_infinite]"></span>
+              {surah.number}
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold font-(family-name:--font-amiri) text-foreground mb-4 drop-shadow-sm">
+              سورة {surah.name}
+            </h1>
+            <p className="text-xl md:text-2xl text-primary font-medium mb-10 font-(family-name:--font-tajawal)">
+              الشيخ محمد صديق المنشاوي
+            </p>
+            
+            <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+              <span className="glass px-6 py-2.5 rounded-full text-sm font-bold border-primary/20 text-foreground">
+                مدة التلاوة: {surah.duration}
+              </span>
+            </div>
+
+            <div className="mb-12">
+              <AudioPlayer surahSlug={surah.slug} audioUrl={surah.file.startsWith('http') ? surah.file : `/audio/${surah.file}`} />
+            </div>
+            
+            <div className="flex items-center justify-center gap-6 mt-12 pt-8 border-t border-primary/10 flex-wrap relative z-10">
+              <a href={surah.file.startsWith('http') ? surah.file : `/audio/${surah.file}`} target="_blank" rel="noopener noreferrer" download className="flex items-center gap-2 text-foreground hover:text-white transition-all duration-300 font-bold bg-primary/10 hover:bg-primary px-6 py-3 rounded-xl border border-primary/20 hover:shadow-[0_0_20px_rgba(15,118,110,0.3)] hover:-translate-y-1">
+                <Download size={20} /> تحميل الملف بجودة عالية
+              </a>
+              <ShareButton title={`سورة ${surah.name}`} text={`استمع لسورة ${surah.name} بصوت الشيخ محمد صديق المنشاوي - المصحف الثاني`} />
+            </div>
           </div>
         </div>
       </div>

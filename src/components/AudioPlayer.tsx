@@ -94,10 +94,12 @@ export default function AudioPlayer({ surahSlug, audioUrl }: AudioPlayerProps) {
     return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
   };
 
-  if (!isClient) return <div className="h-48 bg-gray-100 dark:bg-gray-800 rounded-2xl animate-pulse"></div>;
+  if (!isClient) return <div className="h-48 glass rounded-3xl animate-pulse w-full max-w-3xl mx-auto border border-primary/10"></div>;
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-6 shadow-lg border border-gray-100 dark:border-gray-700 w-full max-w-3xl mx-auto">
+    <div className="glass rounded-3xl p-6 sm:p-8 shadow-xl border border-primary/20 w-full max-w-3xl mx-auto relative overflow-hidden group/player">
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+      
       <audio
         ref={audioRef}
         onTimeUpdate={handleTimeUpdate}
@@ -110,37 +112,50 @@ export default function AudioPlayer({ surahSlug, audioUrl }: AudioPlayerProps) {
         <source src={audioUrl} type="audio/mpeg" />
       </audio>
       
-      <div className="flex flex-col gap-6">
-        <div className="flex items-center gap-2 sm:gap-4 flex-row-reverse" dir="ltr">
-          <span className="text-sm font-medium w-12 text-center text-gray-600 dark:text-gray-300">{formatTime(duration)}</span>
-          <input
-            type="range"
-            min="0"
-            max={duration || 100}
-            value={progress}
-            onChange={handleSeek}
-            className="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary"
-          />
-          <span className="text-sm font-medium w-12 text-center text-primary">{formatTime(progress)}</span>
+      <div className="flex flex-col gap-8 relative z-10">
+        <div className="flex items-center gap-3 sm:gap-5 flex-row-reverse" dir="ltr">
+          <span className="text-sm font-bold w-12 text-center text-foreground/70">{formatTime(duration)}</span>
+          <div className="flex-1 relative flex items-center group/slider">
+            <input
+              type="range"
+              min="0"
+              max={duration || 100}
+              value={progress}
+              onChange={handleSeek}
+              className="w-full h-2.5 bg-gray-200 dark:bg-gray-700 rounded-full appearance-none cursor-pointer accent-primary relative z-10"
+            />
+            {/* Custom progress track overlay for better look */}
+            <div 
+              className="absolute left-0 top-1/2 -translate-y-1/2 h-2.5 bg-primary rounded-full pointer-events-none"
+              style={{ width: `${duration ? (progress / duration) * 100 : 0}%` }}
+            ></div>
+          </div>
+          <span className="text-sm font-bold w-12 text-center text-primary">{formatTime(progress)}</span>
         </div>
 
-        <div className="flex items-center justify-center gap-4 sm:gap-6" dir="ltr">
-          <button onClick={() => skip(-15)} className="p-2 sm:p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition text-gray-600 dark:text-gray-300" aria-label="تأخير 15 ثانية">
-            <SkipBack size={24} />
+        <div className="flex items-center justify-center gap-6 sm:gap-10" dir="ltr">
+          <button onClick={() => skip(-15)} className="p-3 sm:p-4 rounded-full hover:bg-primary/10 transition-colors text-foreground/80 hover:text-primary" aria-label="تأخير 15 ثانية">
+            <SkipBack size={28} />
           </button>
-          <button onClick={handlePlayPause} className="w-16 h-16 sm:w-20 sm:h-20 bg-primary text-white rounded-full flex items-center justify-center hover:scale-105 hover:bg-teal-700 transition shadow-lg" aria-label={isPlaying ? "إيقاف مؤقت" : "تشغيل"}>
-            {isPlaying ? <Pause size={32} /> : <Play size={32} className="ml-1" />}
+          
+          <button 
+            onClick={handlePlayPause} 
+            className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-primary to-teal-700 text-white rounded-full flex items-center justify-center hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(15,118,110,0.4)] hover:shadow-[0_0_30px_rgba(15,118,110,0.6)] border-4 border-white/10" 
+            aria-label={isPlaying ? "إيقاف مؤقت" : "تشغيل"}
+          >
+            {isPlaying ? <Pause size={36} className="fill-current" /> : <Play size={36} className="ml-2 fill-current" />}
           </button>
-          <button onClick={() => skip(15)} className="p-2 sm:p-3 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition text-gray-600 dark:text-gray-300" aria-label="تقديم 15 ثانية">
-            <SkipForward size={24} />
+          
+          <button onClick={() => skip(15)} className="p-3 sm:p-4 rounded-full hover:bg-primary/10 transition-colors text-foreground/80 hover:text-primary" aria-label="تقديم 15 ثانية">
+            <SkipForward size={28} />
           </button>
         </div>
 
-        <div className="flex items-center justify-between mt-2 text-sm text-gray-500 dark:text-gray-400">
-          <button onClick={changeSpeed} className="flex items-center gap-2 hover:text-primary transition font-medium bg-gray-50 dark:bg-gray-900 px-3 py-1 rounded-full">
-            <Settings size={16} /> سرعة {playbackRate}x
+        <div className="flex items-center justify-between mt-2 text-sm font-bold text-foreground/60 border-t border-primary/10 pt-4">
+          <button onClick={changeSpeed} className="flex items-center gap-2 hover:text-primary transition-colors bg-primary/5 hover:bg-primary/10 px-4 py-2 rounded-full border border-primary/10">
+            <Settings size={18} /> سرعة {playbackRate}x
           </button>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10">
             <Volume2 size={18} />
           </div>
         </div>
