@@ -108,5 +108,15 @@
 "duration": "00:44:41",
 "createdAt": "2026-06-06T00:00:00.000Z",
 "updatedAt": "2026-06-06T00:00:00.000Z"
+},
+  {
+"id": "surah-013-ar-rad",
+"number": 13,
+"name": "الرعد",
+"slug": "ar-rad",
+"file": "https://archive.org/download/minshawi-second-mushaf/013-ar-rad.MP3",
+"duration": "00:00:13",
+"createdAt": "2026-06-06T00:00:00.000Z",
+"updatedAt": "2026-06-06T00:00:00.000Z"
 }
 ]
