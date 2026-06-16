@@ -37,7 +37,7 @@ keywords: [
 ],
 
 verification: {
-google: "UBMPwzSYZwzoTK0-B80Ui1zZqnQYHB8whp1zSEkw1TY",
+google: "ZG1BtCDa-sdnz2Ng41hRczEtCE8UQiGsHCQd8GljozU",
 },
 
 openGraph: {
