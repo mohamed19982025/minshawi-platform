@@ -17,7 +17,6 @@ const recentSurahs = sortedSurahs.slice(0, 3);
 
 return ( <div className="container mx-auto px-4 py-12">
 
-```
   {/* Hero */}
   <section className="text-center mb-16 max-w-4xl mx-auto">
     <div className="inline-block bg-secondary/10 text-secondary px-4 py-2 rounded-full mb-6 font-medium">
@@ -148,7 +147,5 @@ return ( <div className="container mx-auto px-4 py-12">
   </section>
 
 </div>
-```
-
 );
 }
